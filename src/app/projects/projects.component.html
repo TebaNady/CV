@@ -2,32 +2,15 @@
     <h2 style="text-align: center;">Portfolio</h2>
     <div class="container">
         <div class="row ">
-            <div class="col-md-3 offset-1">
-                <div class="card text-start">
-                    <img class="card-img-top" src="../../assets/img/Ebay.png" alt="Ebay">
+            <div class="col-md-3 offset-1" *ngFor="let project of projects; let i = index">
+                <div class="card text-start text-light" [ngClass]="{'bg-secondary' : i == 0 || i % 2 == 0 , 'text-dark' : i % 2 !=0}">
+                    <img class="card-img-top" [src]="project.img" alt="Ebay">
                     <div class="card-body">
-                        <h4 class="card-title">Ebay</h4>
-                        <p class="card-text">A simulation of Ebay products page using HTML, CSS, Bootstrap and JavaScript.</p>
+                        <h4 class="card-title">{{project.projectName}}</h4>
+                        <p class="card-text">{{project.projectDescription}}</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-start">
-                    <img class="card-img-top" src="../../assets/img/Linkedin.png" alt="Linkedin">
-                    <div class="card-body">
-                        <h4 class="card-title">Linkedin</h4>
-                        <p class="card-text">A simulation of Linkedin using HTML, CSS, Bootstrap and JavaScript. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-start">
-                    <img class="card-img-top" src="../../assets/img/CV.png" alt="CV">
-                    <div class="card-body">
-                        <h4 class="card-title">CV</h4>
-                        <p class="card-text">My CV using HTML, CSS, Bootstrap, TypeScript and Angular.</p>
-                    </div>
-                </div>
+                <br>
             </div>
         </div>
     </div>
